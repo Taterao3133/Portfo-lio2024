@@ -101,16 +101,18 @@ section{
 .btn-box{
     position: relative;
     display: flex;
-    justify-content: space-between;
-    width: 3.5rem;
+   column-gap: 30px;
+    
+    width: 30.5rem;
     height: 5rem;
 
 
 }
+
 .btn-box .btn{
     position: relative;
     display: inline-flex;
-    justify-content: space-between;
+    padding: 20px;
     align-items: center;
     width: 15rem;
     height: 100%;
@@ -121,6 +123,37 @@ section{
     font-weight: 600;
     letter-spacing: .1rem;
     color: var(--bg-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.5s;
 }
- 
+.btn-box .btn:hover{
+    color: var(--main-color);
+}
+.btn-box .btn:nth-child(2){
+    background: transparent;
+    color: var(--main-color);
+}
+.btn-box .btn:nth-child(2):hover{
+    background: var(--bg-color);
+    color: var(--second-bg-color);
+}
+.btn-box .btn:nth-child(2)::before{
+    background: var(--main-color);
+}
+ .btn-box .btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background:var(--bg-color);
+    z-index: -1;
+    transition: 0.5s;
+ }
+ .btn-box .btn:hover::before{
+    width: 100%;
+ }
+
 /* 15:41 stoped */
